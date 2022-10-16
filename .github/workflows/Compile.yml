@@ -5,6 +5,9 @@ on:
     branches:  [main]
   pull_request: 
     branches:  [main]
+concurrency: 
+  group: ${{ github.ref }}
+  cancel-in-progress: true
 env: 
   RESOURCE_PUBLISHER_TOKEN: ${{ secrets.RESOURCE_PUBLISHER_TOKEN }}
   WOLFRAMSCRIPT_ENTITLEMENTID: ${{ secrets.WOLFRAMSCRIPT_ENTITLEMENTID }}
@@ -157,7 +160,7 @@ jobs:
         name: ${{ env.WOLFRAM_SYSTEM_ID }}
         path: ${{ env.WOLFRAM_LIBRARY_BUILD_OUTPUT }}/${{ env.WOLFRAM_SYSTEM_ID }}
   BuildPaclet: 
-    name: Build Paclet
+    name: BuildPaclet
     runs-on: ubuntu-latest
     container: 
       image: wolframresearch/wolframengine:13.0.1
@@ -174,6 +177,22 @@ jobs:
       uses: actions/download-artifact@v3
       with: 
         path: LibraryResources
+    - name: BuildMX
+      run: |
+        if [ "${{ env.WLPR_PACLET_SITE }}" != "" ]
+        then
+            echo 'Updating paclet sites...'
+            wolframscript -code 'PacletInstall["PacletManager"];PacletSiteRegister["${{ env.WLPR_PACLET_SITE }}"];PacletSiteUpdate[PacletSites[]];Quit[]' > /dev/null
+        fi
+        wolframscript Scripts/BuildMX.wls
+    - name: SetBuildDate
+      run: |
+        if [ "${{ env.WLPR_PACLET_SITE }}" != "" ]
+        then
+            echo 'Updating paclet sites...'
+            wolframscript -code 'PacletInstall["PacletManager"];PacletSiteRegister["${{ env.WLPR_PACLET_SITE }}"];PacletSiteUpdate[PacletSites[]];Quit[]' > /dev/null
+        fi
+        wolframscript Scripts/SetBuildDate.wls
     - name: Build
       id: build-paclet-step
       uses: WolframResearch/build-paclet@v1.10.1
