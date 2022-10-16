@@ -1,0 +1,303 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* Created By: SaveReadableNotebook *)
+(* https://resources.wolframcloud.com/FunctionRepository/resources/SaveReadableNotebook *)
+
+Notebook[
+ {
+  Cell[
+   CellGroupData[
+    {
+     Cell["Sample Guide", "GuideTitle", CellID -> 340746646],
+     Cell[
+      "This is a basic guide page.",
+      "GuideAbstract",
+      CellID -> 200859952
+     ]
+    },
+    Open
+   ]
+  ],
+  Cell[
+   CellGroupData[
+    {
+     Cell["", "GuideFunctionsSection", CellID -> 1031795],
+     Cell[
+      TextData[
+       {
+        Cell[
+         BoxData[
+          ButtonBox[
+           "AddOne",
+           BaseStyle -> "Link",
+           ButtonData -> "paclet:Wolfram/AdvancedSamplePaclet/ref/AddOne"
+          ]
+         ],
+         "InlineGuideFunction"
+        ],
+        " \[LongDash] ",
+        "add one to something"
+       }
+      ],
+      "GuideText",
+      CellID -> 211070903
+     ],
+     Cell[
+      TextData[
+       {
+        Cell[
+         BoxData[
+          ButtonBox[
+           "AddTwo",
+           BaseStyle -> "Link",
+           ButtonData -> "paclet:Wolfram/AdvancedSamplePaclet/ref/AddTwo"
+          ]
+         ],
+         "InlineGuideFunction"
+        ],
+        " \[LongDash] ",
+        "add two to something"
+       }
+      ],
+      "GuideText",
+      CellID -> 220514644
+     ],
+     Cell[
+      CellGroupData[
+       {
+        Cell["\t", "GuideDelimiter", CellID -> 20280992],
+        Cell[
+         TextData[
+          {
+           Cell[
+            BoxData[
+             ButtonBox[
+              "AddOne",
+              BaseStyle -> "Link",
+              ButtonData -> "paclet:Wolfram/AdvancedSamplePaclet/ref/AddOne"
+             ]
+            ],
+            "InlineFormula"
+           ],
+           " \[EmptyVerySmallSquare] ",
+           Cell[
+            BoxData[
+             ButtonBox[
+              "AddTwo",
+              BaseStyle -> "Link",
+              ButtonData -> "paclet:Wolfram/AdvancedSamplePaclet/ref/AddTwo"
+             ]
+            ],
+            "InlineFormula"
+           ]
+          }
+         ],
+         "InlineGuideFunctionListing",
+         CellID -> 489764499
+        ]
+       },
+       Open
+      ]
+     ]
+    },
+    Open
+   ]
+  ],
+  Cell[
+   CellGroupData[
+    {
+     Cell[
+      "Tech Notes",
+      "GuideTutorialsSection",
+      CellID -> 224006967
+     ],
+     Cell[
+      TextData[
+       ButtonBox[
+        "Arithmetic",
+        BaseStyle -> "Link",
+        ButtonData -> "paclet:Wolfram/AdvancedSamplePaclet/tutorial/Arithmetic"
+       ]
+      ],
+      "GuideTutorial",
+      CellID -> 740957486
+     ]
+    },
+    Open
+   ]
+  ],
+  Cell[
+   "Related Guides",
+   "GuideMoreAboutSection",
+   CellID -> 253476734
+  ],
+  Cell[
+   CellGroupData[
+    {
+     Cell[
+      "Related Links",
+      "GuideRelatedLinksSection",
+      CellID -> 186602967
+     ],
+     Cell[
+      TextData[
+       ButtonBox[
+        "Wolfram Technology Conference 2022",
+        BaseStyle -> "Hyperlink",
+        ButtonData -> {
+         URL[
+          "https://www.wolfram.com/events/technology-conference/2022"
+         ],
+         None
+        }
+       ]
+      ],
+      "GuideRelatedLinks",
+      CellID -> 149187524
+     ],
+     Cell[
+      TextData[
+       ButtonBox[
+        "PacletCICD | Wolfram Language Paclet Repository",
+        BaseStyle -> "Hyperlink",
+        ButtonData -> {
+         URL[
+          "https://resources.wolframcloud.com/PacletRepository/resources/Wolfram/PacletCICD"
+         ],
+         None
+        },
+        ButtonNote -> "https://resources.wolframcloud.com/PacletRepository/resources/Wolfram/PacletCICD"
+       ]
+      ],
+      "GuideRelatedLinks",
+      CellID -> 59367280
+     ],
+     Cell[
+      TextData[
+       ButtonBox[
+        "PacletCICD | GitHub",
+        BaseStyle -> "Hyperlink",
+        ButtonData -> {
+         URL["https://github.com/WolframResearch/PacletCICD"],
+         None
+        },
+        ButtonNote -> "https://github.com/WolframResearch/PacletCICD"
+       ]
+      ],
+      "GuideRelatedLinks",
+      CellID -> 401143295
+     ],
+     Cell[
+      TextData[
+       ButtonBox[
+        "AdvancedSamplePaclet | GitHub",
+        BaseStyle -> "Hyperlink",
+        ButtonData -> {
+         URL["https://github.com/rhennigan/AdvancedSamplePaclet"],
+         None
+        },
+        ButtonNote -> "https://github.com/rhennigan/AdvancedSamplePaclet"
+       ]
+      ],
+      "GuideRelatedLinks",
+      CellID -> 905374986
+     ]
+    },
+    Open
+   ]
+  ],
+  Cell[
+   CellGroupData[
+    {
+     Cell["Metadata", "MetadataSection", CellID -> 397981566],
+     Cell[
+      TextData[
+       {
+        "New in: ",
+        Cell["", "HistoryData", CellTags -> "New"],
+        " | Modified in: ",
+        Cell[" ", "HistoryData", CellTags -> "Modified"],
+        " | Obsolete in: ",
+        Cell[" ", "HistoryData", CellTags -> "Obsolete"]
+       }
+      ],
+      "History",
+      CellID -> 161940669
+     ],
+     Cell[
+      CellGroupData[
+       {
+        Cell[
+         "Categorization",
+         "CategorizationSection",
+         CellID -> 193346993
+        ],
+        Cell[
+         "Guide",
+         "Categorization",
+         CellLabel -> "Entity Type",
+         CellID -> 9827872
+        ],
+        Cell[
+         "Wolfram/AdvancedSamplePaclet",
+         "Categorization",
+         CellLabel -> "Paclet Name",
+         CellID -> 70190589
+        ],
+        Cell[
+         "Wolfram`AdvancedSamplePaclet`",
+         "Categorization",
+         CellLabel -> "Context",
+         CellID -> 239348175
+        ],
+        Cell[
+         "Wolfram/AdvancedSamplePaclet/guide/SampleGuide",
+         "Categorization",
+         CellLabel -> "URI",
+         CellID -> 809623026
+        ]
+       },
+       Open
+      ]
+     ],
+     Cell[
+      CellGroupData[
+       {
+        Cell["Keywords", "KeywordsSection", CellID -> 155905138],
+        Cell["XXXX", "Keywords", CellID -> 662730104]
+       },
+       Closed
+      ]
+     ]
+    },
+    Open
+   ]
+  ]
+ },
+ WindowStatusArea -> Automatic,
+ TaggingRules -> {
+  "WelcomeScreenSettings" -> {"FEStarting" -> False},
+  "InformationPopupMenuItemAdded" -> True,
+  "Paclet" -> "Wolfram/AdvancedSamplePaclet",
+  "NotebookIndexQ" -> True,
+  "NotebookLastIndexed" ->
+   DateObject[
+    {2022, 10, 16, 13, 14, 23.447},
+    "Instant",
+    "Gregorian",
+    -4.0
+   ],
+  "NotebookUUID" -> "fdfe3688-7ffb-452e-8da0-fad0a663f734"
+ },
+ FrontEndVersion -> "13.1 for Microsoft Windows (64-bit) (June 16, 2022)",
+ StyleDefinitions ->
+  FrontEnd`FileName[
+   {"Wolfram"},
+   "GuidePageStylesExt.nb",
+   CharacterEncoding -> "UTF-8"
+  ],
+ ExpressionUUID -> "fdfe3688-7ffb-452e-8da0-fad0a663f734"
+]
