@@ -990,71 +990,6 @@ Notebook[
             ]
            ],
            Cell[
-            TextData[
-             Cell[
-              BoxData[
-               InterpretationBox[
-                TagBox[
-                 ActionMenuBox[
-                  "\"LibraryResources\"",
-                  {
-                   "\"Open/Close Group\"" :>
-                    (SelectionMove[ParentCell[EvaluationCell[]], All, Cell];
-                    FrontEndTokenExecute[
-                     EvaluationNotebook[],
-                     "OpenCloseGroup"
-                    ]),
-                   "\"Open Directory\"" :>
-                    DefinitionNotebookClient`FileTreeOpen[
-                     ParentCell[EvaluationCell[]]
-                    ],
-                   "\"Un/Mark as Excluded\"" :>
-                    DefinitionNotebookClient`FileTreeExclusionToggle[
-                     ParentCell[EvaluationCell[]]
-                    ],
-                   "\"Copy Path to Clipboard\"" :>
-                    DefinitionNotebookClient`FileTreeCopy[
-                     ParentCell[EvaluationCell[]]
-                    ]
-                  },
-                  Appearance -> None,
-                  BaseStyle -> {"Text"}
-                 ],
-                 Function[
-                  Annotation[
-                   #1,
-                   DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[
-                    0
-                   ]
-                  ]
-                 ]
-                ],
-                FileNameJoin[{NotebookDirectory[], "LibraryResources"}],
-                BoxID -> "FileTreePath",
-                BaseStyle -> {"Text"}
-               ]
-              ]
-             ]
-            ],
-            "FileManagerDirectory",
-            CellMargins -> {{Inherited, Inherited}, {Inherited, Inherited}},
-            CellGroupingRules -> {"SectionGrouping", 100},
-            CellFrameLabels -> {
-             {
-              Cell[
-               BoxData[
-                TemplateBox[{}, "FileManagerDirectoryIconTemplate"]
-               ],
-               Background -> None
-              ],
-              Inherited
-             },
-             {Inherited, Inherited}
-            },
-            CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-            CellID -> 145332038
-           ],
-           Cell[
             BoxData[
              InterpretationBox[
               TagBox[
@@ -2031,7 +1966,9 @@ Notebook[
                          "{",
                          RowBox[
                           {
-                           RowBox[{"{", RowBox[{"0", ",", "360"}], "}"}],
+                           RowBox[
+                            {"{", RowBox[{RowBox[{"-", "25"}], ",", "385"}], "}"}
+                           ],
                            ",",
                            RowBox[{"{", RowBox[{"0", ",", "360"}], "}"}]
                           }
@@ -2051,7 +1988,7 @@ Notebook[
                 }
                ],
                "Input",
-               CellLabel -> "In[1]:=",
+               CellLabel -> "In[13]:=",
                CellID -> 5631720
               ],
               Cell[
@@ -5325,13 +5262,13 @@ Notebook[
                   }
                  },
                  AspectRatio -> Automatic,
-                 ImageSize -> {Automatic, 197.0},
-                 PlotRange -> {{0, 360}, {0, 360}}
+                 ImageSize -> {Automatic, 201.1},
+                 PlotRange -> {{-25, 385}, {0, 360}}
                 ]
                ],
                "Output",
-               CellLabel -> "Out[3]=",
-               CellID -> 53966144
+               CellLabel -> "Out[15]=",
+               CellID -> 238750917
               ]
              },
              Open
@@ -5404,23 +5341,74 @@ Notebook[
             CellID -> 433339604
            ],
            Cell[
-            "This is a sample paclet used for a PacletCICD demo at the 2022 Wolfram Technology Conference. This Paclet is meant to demonstrate more advanced CI/CD workflows that involves:",
+            TextData[
+             {
+              "This is a sample paclet used for a ",
+              ButtonBox[
+               "PacletCICD",
+               BaseStyle -> "Hyperlink",
+               ButtonData -> {
+                URL[
+                 "https://resources.wolframcloud.com/PacletRepository/resources/Wolfram/PacletCICD"
+                ],
+                None
+               },
+               ButtonNote -> "https://resources.wolframcloud.com/PacletRepository/resources/Wolfram/PacletCICD"
+              ],
+              " demo at the ",
+              ButtonBox[
+               "2022 Wolfram Technology Conference",
+               BaseStyle -> "Hyperlink",
+               ButtonData -> {
+                URL[
+                 "https://www.wolfram.com/events/technology-conference/2022"
+                ],
+                None
+               },
+               ButtonNote -> "https://www.wolfram.com/events/technology-conference/2022"
+              ],
+              ". This paclet is meant to demonstrate more advanced CI/CD workflows that involves:"
+             }
+            ],
             "Text",
             CellTags -> "DefaultContent",
             CellID -> 179813588
            ],
-           Cell["standard paclet checks", "Item", CellID -> 431665121],
            Cell[
-            "multi-platform compilation",
-            "Item",
+            "- standard paclet checks",
+            "Text",
+            CellID -> 431665121
+           ],
+           Cell[
+            "- multi-platform compilation",
+            "Text",
             CellID -> 148042928
            ],
-           Cell["automated tests", "Item", CellID -> 139829575],
-           Cell["MX builds", "Item", CellID -> 263404980],
+           Cell["- automated tests", "Text", CellID -> 139829575],
+           Cell["- MX builds", "Text", CellID -> 263404980],
            Cell[
-            "separate workflows for pull requests and releases",
-            "Item",
+            "- separate workflows for pull requests and releases",
+            "Text",
             CellID -> 638483761
+           ],
+           Cell[
+            TextData[
+             {
+              "The full source for this paclet can be found on GitHub ",
+              ButtonBox[
+               "here",
+               BaseStyle -> "Hyperlink",
+               ButtonData -> {
+                URL["https://github.com/rhennigan/AdvancedSamplePaclet"],
+                None
+               },
+               ButtonNote -> "https://github.com/rhennigan/AdvancedSamplePaclet"
+              ],
+              "."
+             }
+            ],
+            "Text",
+            CellID -> 77980432
            ]
           },
           Open
@@ -5554,7 +5542,11 @@ Notebook[
            Cell[
             BoxData[TemplateBox[{}, "MainGuideChooserTemplate"]],
             "MainGuideChooser",
-            TaggingRules -> {"Refreshing" -> False, "Relative" -> True},
+            TaggingRules -> {
+             "Refreshing" -> False,
+             "Relative" -> True,
+             "MainGuidePageString" -> "Documentation/English/Guides/SampleGuide.nb"
+            },
             CellTags -> "MainGuidePagePanel",
             CellID -> 614786987
            ]
@@ -6332,7 +6324,7 @@ Notebook[
                 ButtonBox[
                  "AddTwo",
                  BaseStyle -> "Link",
-                 ButtonData -> "paclet:SamplePublisher/SamplePaclet/ref/AddTwo"
+                 ButtonData -> "paclet:Wolfram/AdvancedSamplePaclet/ref/AddTwo"
                 ]
                ],
                "InlineFormula",
@@ -6344,7 +6336,7 @@ Notebook[
                 ButtonBox[
                  "AddOne",
                  BaseStyle -> "Link",
-                 ButtonData -> "paclet:SamplePublisher/SamplePaclet/ref/AddOne"
+                 ButtonData -> "paclet:Wolfram/AdvancedSamplePaclet/ref/AddOne"
                 ]
                ],
                "InlineFormula",
@@ -6425,10 +6417,26 @@ Notebook[
                 {
                  Cell[
                   BoxData[
-                   ButtonBox[
-                    "AddOne",
-                    BaseStyle -> "Link",
-                    ButtonData -> "paclet:SamplePublisher/SamplePaclet/ref/AddOne"
+                   TagBox[
+                    ButtonBox[
+                     StyleBox[
+                      "AddOne",
+                      "SymbolsRefLink",
+                      ShowStringCharacters -> True,
+                      FontFamily -> "Source Sans Pro"
+                     ],
+                     BaseStyle ->
+                      Dynamic[
+                       FEPrivate`If[
+                        CurrentValue["MouseOver"],
+                        {"Link", FontColor -> RGBColor[0.8549, 0.39608, 0.1451]},
+                        {"Link"}
+                       ]
+                      ],
+                     ButtonData -> "paclet:Wolfram/AdvancedSamplePaclet/ref/AddOne",
+                     ContentPadding -> False
+                    ],
+                    MouseAppearanceTag["LinkHand"]
                    ]
                   ],
                   "InlineFormula",
@@ -10296,7 +10304,7 @@ Notebook[
   "NotebookIndexQ" -> True,
   "NotebookLastIndexed" ->
    DateObject[
-    {2022, 10, 16, 13, 34, 23.391},
+    {2022, 10, 16, 14, 11, 42.668},
     "Instant",
     "Gregorian",
     -4.0

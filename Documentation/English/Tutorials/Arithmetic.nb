@@ -208,7 +208,7 @@ Notebook[
                 ButtonBox[
                  "AddOne",
                  BaseStyle -> "Link",
-                 ButtonData -> "paclet:SamplePublisher/SamplePaclet/ref/AddOne"
+                 ButtonData -> "paclet:Wolfram/AdvancedSamplePaclet/ref/AddOne"
                 ]
                ],
                "InlineFormula"
@@ -445,7 +445,7 @@ Notebook[
                 ButtonBox[
                  "AddOne",
                  BaseStyle -> "Link",
-                 ButtonData -> "paclet:SamplePublisher/SamplePaclet/ref/AddOne"
+                 ButtonData -> "paclet:Wolfram/AdvancedSamplePaclet/ref/AddOne"
                 ]
                ],
                "InlineFormula"
