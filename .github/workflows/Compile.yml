@@ -11,7 +11,7 @@ env:
   WLPR_PACLET_SITE: https://resources.wolframcloud.com/PacletRepository/pacletsite
 jobs: 
   Compile-Windows-x86-64: 
-    name: Compile (Windows-x86-64)
+    name: Compile-Windows-x86-64
     runs-on: windows-latest
     env: 
       WOLFRAM_LIBRARY_BUILD_OUTPUT: LibraryResources/
@@ -75,7 +75,7 @@ jobs:
         name: ${{ env.WOLFRAM_SYSTEM_ID }}
         path: ${{ env.WOLFRAM_LIBRARY_BUILD_OUTPUT }}/${{ env.WOLFRAM_SYSTEM_ID }}
   Compile-MacOSX-x86-64: 
-    name: Compile (MacOSX-x86-64)
+    name: Compile-MacOSX-x86-64
     runs-on: macos-12
     env: 
       WOLFRAM_LIBRARY_BUILD_OUTPUT: LibraryResources/
@@ -126,7 +126,7 @@ jobs:
         name: ${{ env.WOLFRAM_SYSTEM_ID }}
         path: ${{ env.WOLFRAM_LIBRARY_BUILD_OUTPUT }}/${{ env.WOLFRAM_SYSTEM_ID }}
   Compile-Linux-x86-64: 
-    name: Compile (Linux-x86-64)
+    name: Compile-Linux-x86-64
     runs-on: ubuntu-latest
     container: 
       image: wolframresearch/wolframengine:13.0.1
