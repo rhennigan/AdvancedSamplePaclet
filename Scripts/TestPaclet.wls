@@ -14,6 +14,6 @@ $pacDir        = DirectoryName[ $inputFileName, 2 ];
 $buildDir      = FileNameJoin @ { $pacDir, "build", "Wolfram__AdvancedSamplePaclet" };
 
 PacletDirectoryLoad @ $buildDir;
-cicd`TestPaclet @ File @ $buildDir
+cicd`TestPaclet @ File @ $pacDir
 
 (* :!CodeAnalysis::EndBlock:: *)
