@@ -176,10 +176,10 @@ jobs:
         path: LibraryResources
     - name: Build
       id: build-paclet-step
-      uses: WolframResearch/build-paclet@v1.10.1
+      uses: WolframResearch/build-paclet@v1.10.2
       with: 
         target: Submit
-        paclet_cicd_version: 0.33.2
+        paclet_cicd_version: 0.33.3
         definition_notebook: ./ResourceDefinition.nb
         resource_system_base: https://www.wolframcloud.com/obj/resourcesystem/api/1.0
     - name: UploadArtifact
