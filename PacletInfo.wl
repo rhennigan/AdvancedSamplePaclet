@@ -2,6 +2,7 @@ PacletObject[ <|
     "Name"             -> "Wolfram/AdvancedSamplePaclet",
     "Description"      -> "A sample paclet used to demonstrate more complex CI/CD workflows at the 2022 Wolfram Technology Conference",
     "Creator"          -> "Richard Hennigan (Wolfram Research)",
+    "ActionURL"        -> "$ActionURL$",
     "BuildDate"        -> "$BuildDate$",
     "Version"          -> "1.0.0",
     "WolframVersion"   -> "13.0+",
