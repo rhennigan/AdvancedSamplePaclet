@@ -8,7 +8,7 @@ Export[
     $pacletInfoFile,
     StringReplace[
         ReadString @ $pacletInfoFile,
-        "$BuildDate$" -> DateString[ "DateTimeShort" ]
+        "$BuildDate$" -> DateString[ "DateTimeShort", TimeZone -> 0 ]
     ],
     "String"
 ]

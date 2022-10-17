@@ -4,7 +4,7 @@
 (* :!CodeAnalysis::Disable::SuspiciousSessionSymbol:: *)
 
 If[ FailureQ @ FindFile[ "Wolfram`PacletCICD`" ],
-    PacletInstall[ "https://github.com/WolframResearch/PacletCICD/releases/download/v0.33.1/Wolfram__PacletCICD-0.33.1.paclet" ]
+    PacletInstall[ "Wolfram/PacletCICD" ]
 ];
 
 Needs[ "Wolfram`PacletCICD`" -> "cicd`" ];
