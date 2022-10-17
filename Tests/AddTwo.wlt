@@ -1,18 +1,4 @@
 VerificationTest[
-    $pacletDir = DirectoryName[ $TestFileName, 2 ],
-    _? DirectoryQ,
-    SameTest -> MatchQ,
-    TestID   -> "AddTwo-PacletDirectory"
-]
-
-VerificationTest[
-    PacletDirectoryLoad @ $pacletDir,
-    { ___, $pacletDir, ___ },
-    SameTest -> MatchQ,
-    TestID   -> "AddTwo-PacletDirectoryLoad"
-]
-
-VerificationTest[
     Needs[ "Wolfram`AdvancedSamplePaclet`" ],
     Null,
     TestID -> "AddTwo-Needs"
