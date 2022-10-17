@@ -7,6 +7,8 @@ If[ FailureQ @ FindFile[ "Wolfram`PacletCICD`" ],
     PacletInstall[ "Wolfram/PacletCICD" ]
 ];
 
+EchoEvaluation @ FileNames[ "*.wlt", Directory[ ], Infinity ];
+
 Needs[ "Wolfram`PacletCICD`" -> "cicd`" ];
 
 $inputFileName = Replace[ $InputFileName, "" :> NotebookFileName[ ] ];
