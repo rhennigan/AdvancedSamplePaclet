@@ -214,6 +214,11 @@ jobs:
     - name: Checkout
       id: checkout-code-step
       uses: actions/checkout@v3
+    - name: DownloadBuiltPaclet
+      uses: actions/download-artifact@v3
+      with: 
+        name: artifact
+        path: build
     - name: RestoreCachedWolframEngine
       id: cache-restore-step
       uses: actions/cache@v3
@@ -222,11 +227,6 @@ jobs:
       with: 
         path: ${{ env.WOLFRAMENGINE_INSTALLATION_DIRECTORY }}
         key: wolframengine-${{ env.WOLFRAM_SYSTEM_ID }}-${{ env.WOLFRAMENGINE_CACHE_KEY }}
-    - name: DownloadBuiltPaclet
-      uses: actions/download-artifact@v3
-      with: 
-        name: artifact
-        path: build
     - name: InstallWolframEngine
       if: steps.cache-restore-step.outputs.cache-hit != 'true'
       env: 
@@ -287,17 +287,17 @@ jobs:
     - name: Checkout
       id: checkout-code-step
       uses: actions/checkout@v3
+    - name: DownloadBuiltPaclet
+      uses: actions/download-artifact@v3
+      with: 
+        name: artifact
+        path: build
     - name: RestoreCachedWolframEngine
       id: cache-restore-step
       uses: actions/cache@v3
       with: 
         path: ${{ env.WOLFRAMENGINE_INSTALLATION_DIRECTORY }}
         key: wolframengine-${{ env.WOLFRAM_SYSTEM_ID }}-${{ env.WOLFRAMENGINE_CACHE_KEY }}
-    - name: DownloadBuiltPaclet
-      uses: actions/download-artifact@v3
-      with: 
-        name: artifact
-        path: build
     - name: InstallWolframEngine
       if: steps.cache-restore-step.outputs.cache-hit != 'true'
       run: |
@@ -344,6 +344,11 @@ jobs:
     - name: Checkout
       id: checkout-code-step
       uses: actions/checkout@v3
+    - name: DownloadBuiltPaclet
+      uses: actions/download-artifact@v3
+      with: 
+        name: artifact
+        path: build
     - name: TestPaclet
       run: |
         if [ "${{ env.WLPR_PACLET_SITE }}" != "" ]
@@ -352,11 +357,6 @@ jobs:
             wolframscript -code 'PacletInstall["PacletManager"];PacletSiteRegister["${{ env.WLPR_PACLET_SITE }}"];PacletSiteUpdate[PacletSites[]];Quit[]' > /dev/null
         fi
         wolframscript Scripts/TestPaclet.wls
-    - name: DownloadBuiltPaclet
-      uses: actions/download-artifact@v3
-      with: 
-        name: artifact
-        path: build
     - name: UploadWorkflowValues
       id: upload-workflow-values-step
       if: always() && env.PACLET_WORKFLOW_VALUES
