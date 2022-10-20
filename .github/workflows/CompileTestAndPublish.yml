@@ -408,17 +408,48 @@ jobs:
     - name: Checkout
       id: checkout-code-step
       uses: actions/checkout@v3
-    - name: DownloadBuiltPaclet
+    - name: DownloadCompilationArtifacts-Linux-x86-64
+      id: download-compilation-artifacts-linux-step
       uses: actions/download-artifact@v3
       with: 
-        name: artifact
-        path: build
+        name: Linux-x86-64
+        path: LibraryResources
+    - name: DownloadCompilationArtifacts-Windows-x86-64
+      id: download-compilation-artifacts-windows-step
+      uses: actions/download-artifact@v3
+      with: 
+        name: Windows-x86-64
+        path: LibraryResources
+    - name: DownloadCompilationArtifacts-MacOSX-x86-64
+      id: download-compilation-artifacts-macosx-step
+      uses: actions/download-artifact@v3
+      with: 
+        name: MacOSX-x86-64
+        path: LibraryResources
+    - name: BuildMX
+      run: |
+        if [ "${{ env.WLPR_PACLET_SITE }}" != "" ]
+        then
+            echo 'Updating paclet sites...'
+            wolframscript -code 'PacletInstall["PacletManager"];PacletSiteRegister["${{ env.WLPR_PACLET_SITE }}"];PacletSiteUpdate[PacletSites[]];Quit[]' > /dev/null
+        fi
+        wolframscript Scripts/BuildMX.wls
+    - name: SetPacletInfo
+      run: |
+        if [ "${{ env.WLPR_PACLET_SITE }}" != "" ]
+        then
+            echo 'Updating paclet sites...'
+            wolframscript -code 'PacletInstall["PacletManager"];PacletSiteRegister["${{ env.WLPR_PACLET_SITE }}"];PacletSiteUpdate[PacletSites[]];Quit[]' > /dev/null
+        fi
+        wolframscript Scripts/SetPacletInfo.wls
     - name: DownloadWorkflowValues
       id: download-workflow-values-step
       uses: actions/download-artifact@v3
       with: 
         name: paclet-workflow-values
         path: .paclet-workflow-values
+    - name: CheckFiles
+      run: ls -la
     - name: Submit
       id: submit-paclet-step
       uses: WolframResearch/submit-paclet@v1.10.2
