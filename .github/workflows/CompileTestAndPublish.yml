@@ -450,7 +450,8 @@ jobs:
         path: .paclet-workflow-values
     - name: CheckFiles
       run: |
-        ls -la LibraryResources
+        apt install tree -y
+        tree .
         exit 1
     - name: Submit
       id: submit-paclet-step
