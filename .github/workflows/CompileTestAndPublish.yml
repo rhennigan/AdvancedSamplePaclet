@@ -413,19 +413,19 @@ jobs:
       uses: actions/download-artifact@v3
       with: 
         name: Linux-x86-64
-        path: LibraryResources
+        path: LibraryResources/Linux-x86-64
     - name: DownloadCompilationArtifacts-Windows-x86-64
       id: download-compilation-artifacts-windows-step
       uses: actions/download-artifact@v3
       with: 
         name: Windows-x86-64
-        path: LibraryResources
+        path: LibraryResources/Windows-x86-64
     - name: DownloadCompilationArtifacts-MacOSX-x86-64
       id: download-compilation-artifacts-macosx-step
       uses: actions/download-artifact@v3
       with: 
         name: MacOSX-x86-64
-        path: LibraryResources
+        path: LibraryResources/MacOSX-x86-64
     - name: BuildMX
       run: |
         if [ "${{ env.WLPR_PACLET_SITE }}" != "" ]
@@ -450,9 +450,8 @@ jobs:
         path: .paclet-workflow-values
     - name: CheckFiles
       run: |
-        apt install tree -y
+        apt-get install tree -y > /dev/null
         tree .
-        exit 1
     - name: Submit
       id: submit-paclet-step
       uses: WolframResearch/submit-paclet@v1.10.2
