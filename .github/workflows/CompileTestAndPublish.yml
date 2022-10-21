@@ -449,7 +449,9 @@ jobs:
         name: paclet-workflow-values
         path: .paclet-workflow-values
     - name: CheckFiles
-      run: ls -la
+      run: |
+        ls -la LibraryResources
+        exit 1
     - name: Submit
       id: submit-paclet-step
       uses: WolframResearch/submit-paclet@v1.10.2
